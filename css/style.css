@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* css for the fizz buzz */
+#output {
+    color: green;
+}
+
+#resultcol {
+    background-color: #e9ecef;
+
+}
+
+.finalans{
+    font-weight: bold;
+    color: blue;
+    font-size: 30px;
+}
+
+@media screen and (max-width:600px) {
+    .title_heading{
+        font-size: 30px;
+    }
+}
