@@ -1,25 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&family=Ubuntu:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.container{
+  min-height: 80vh;
+}
+.navbar ul li a:hover{ 
+    border-bottom: 3px solid orangered;
+   
 }
 /* css for the fizz buzz */
 #output {
-    color: green;
+  color: #04aa6d;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: justify;
 }
 
 #resultcol {
-    background-color: #e9ecef;
-
+  background-color: #e9ecef;
+}
+.op1 {
+  color: red;
+}
+.op2 {
+  color: blue;
+}
+.op3 {
+  color: darkorange;
+}
+.op4 {
+  color: darkviolet;
 }
 
-.finalans{
-    font-weight: bold;
-    color: blue;
+.btn {
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.finalans {
+  font-weight: bold;
+  color: blue;
+  font-size: 30px;
+}
+.card-title {
+  font-weight: 600;
+}
+
+.resultbox {
+  font-size: 20px;
+  border-left: 5px solid #04aa6d;
+}
+
+.myfooter{
+    position: static;
+    margin-top: 50px;
+    bottom: 0;
+}
+.mycard{
+  background: #e5f8fc;
+}
+
+@media screen and (max-width: 600px) {
+  .title_heading {
     font-size: 30px;
-}
-
-@media screen and (max-width:600px) {
-    .title_heading{
-        font-size: 30px;
-    }
+  }
+  .col-6,
+  .col-3 {
+    width: 100%;
+  }
 }

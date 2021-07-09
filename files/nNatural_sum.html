@@ -14,12 +14,11 @@
     <!-- script for sweet alert  -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>HCF or GCD</title>
+    <title>N-Natural Number sum</title>
 
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Math-Operations</a>
@@ -60,21 +59,18 @@
         </div>
     </nav>
 
-    <h1 class="title_heading text-center display-3"> GCD (greatest common divisor) </h1>
+    <h1 class="title_heading text-center display-3">N-Natural Number Sum</h1>
     <div class="container my-4">
         <div class="row m-2">
             <div class="col-12 shadow p-3 mb-5 rounded ">
                 <div class="card">
-                    <h5 class="card-header text-center">Enter the number to calculate the GCD (greatest common divisor)
-                    </h5>
+                    <h5 class="card-header text-center">Sum of 1 to N number </h5>
                     <div class="card-body">
-
                         <div class="d-flex">
-                            <input type="text" id="number" class="form-control mx-1 " placeholder="Enter numbers">
-                            <button onclick="getGCD()" class="form-control btn btn-success"> Calculate</button>
+                            <input type="number" id="number" class="form-control mx-1 " placeholder="Enter number">
+                            <button onclick="naturalSum()" class="form-control btn btn-success"> Calculate</button>
                         </div>
-                        <small class="mt-3">Note : please enter number space seperated . e.g. 2 4 6 8 </small>
-
+                        <small>e.g if you entered 5 then it will print the sum of 1+2+3+4+5=15</small>
                     </div>
                 </div>
                 <hr>

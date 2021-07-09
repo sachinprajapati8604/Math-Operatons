@@ -16,32 +16,33 @@ function printFizzBuzz() {
     var output=document.getElementById('output');
     var msg=document.getElementById('msg');
 
-    msg.innerHTML = "FizzBuzz from 1 to " + num;
+    msg.innerHTML = "FizzBuzz from <b> 1 </b> to  <b>" + num+"</b>";
     // console.log(num);
     for (var i = 1; i <= num; i++) {
         if (i % 15 == 0) {
             // console.log("FizzBuzz");
-            output.innerHTML += " FizzBuzz ";
+            output.innerHTML += ` <span class="op1  text-wrap">${"FizzBuzz"}</span>`;
             fizzbuzz++;
         } else if (i % 5 == 0) {
             // console.log(" Buzz ");
-            output.innerHTML += " Buzz ";
+            output.innerHTML += ` <span class="op2  text-wrap">${"Buzz"} </span>`;
             buzz++;
 
         } else if (i % 3 == 0) {
             // console.log("Fizz");
-            output.innerHTML += " Fizz ";
+            output.innerHTML += ` <span class="op3  text-wrap">${"Fizz"} </span>`;
             fizz++;
 
         } else {
             numberCount++;
             // console.log(i);
-            output.innerHTML += i + " ";
+            output.innerHTML += ` <span class="op4  text-wrap"> ${i} </span>`;
 
         }
     }
-    document.getElementById("count").innerHTML = "Total fizz :" + fizz + " , Total buzz : " + buzz + " , Total FizzBuzz : " + fizzbuzz + " , Total Numbers  :" + numberCount;
-
+    //i am using literals
+    document.getElementById("count").innerHTML=`Total Fizz :<b> ${fizz}</b> , Total Buzz : <b> ${buzz}</b> ,Total FizzBuzz : <b> ${fizzbuzz}</b> , Total Numbers : <b> ${numberCount}</b> `;
+    reset();
 }
 
 //script for the factorial 
@@ -68,6 +69,8 @@ function getFact() {
 
     const result = calculateFactorial(num);
     document.getElementById("output").innerHTML = "Factorial of " + num + " is : " + result;
+    document.getElementById("output").innerHTML = `Factorial of ${num} is  <span class="finalans"> ${result} </span>`;
+    reset();
 }
 
 //wrtring gcd script
@@ -106,14 +109,38 @@ function getGCD() {
 function reset() {
     document.getElementById('number').value = "";
 }
+
 //writing js for the prime factor 
 function getPrime() {
     let n = document.getElementById("number").value;
-    console.log(n);
+    // console.log(n);
     let output = document.getElementById("output");
+    output.innerHTML="";
+    output.innerHTML+="Prime factor of "+n+" is   ";
+    // printing the number of 2's which divides the n
     while (n % 2 == 0) {
-        output.innerHTML += 2 + " ";
+        output.innerHTML +=`<span class="finalans"> ${2}, </span>`;
         n = n / 2;
     }
+    //now checking if n is become odd  
+    for(var i=3;i<=Math.sqrt(n);i=i+2){
+        while(n%i==0){
+            output.innerHTML+=`<span class="finalans"> ${i}, </span>`;
+            n=n/i;
+        }
+    }
+    //if n is  a prime  number greater than 2
+    if(n>2){
+        output.innerHTML+=`<span class="finalans"> ${n}, </span>`;
+    }
+  reset();
+}
 
+//to get n natural number sum
+function naturalSum(){
+    var n=Number(document.getElementById('number').value);
+    const sum=n*(n+1)/2;
+    // console.log(sum+" "+n);
+    document.getElementById('output').innerHTML=`Sum of 1 to ${n}  is <span class="finalans">${sum}</span>`;
+    reset();
 }
