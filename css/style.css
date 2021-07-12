@@ -21,10 +21,13 @@ body {
   color: #04aa6d;
   font-weight: 500;
   font-size: 20px;
-  text-align: justify;
+  text-align: normal;
+  word-wrap: break-word;
+  
 }
 
 #resultcol {
+  
   background-color: #e9ecef;
 }
 .op1 {
@@ -50,6 +53,7 @@ body {
   font-weight: bold;
   color: blue;
   font-size: 30px;
+  
 }
 .card-title {
   font-weight: 600;
@@ -77,4 +81,6 @@ body {
   .col-3 {
     width: 100%;
   }
+ 
 }
+

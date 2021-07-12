@@ -1,48 +1,64 @@
-
-// js for the fizzbuzz part
-function printFizzBuzz() {
-    let fizz = 0, buzz = 0, fizzbuzz = 0, numberCount = 0;  // using for count
-    var num=document.getElementById('number').value;
-    //writing some edge cases  to check empty or negative number 
+//to check empty input
+function isEmpty() {
+    let num = document.getElementById('number').value;
     if (num === "" || num <= 0) { //to check empty
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Please enter number greater or equal to 1'
+            text: 'Please enter  numbers.'
         })
-        return;
+        return true;
     }
+    return false;
+}
 
-    var output=document.getElementById('output');
-    var msg=document.getElementById('msg');
+//writing function for reset input field
+function reset() {
+    document.getElementById('number').value = "";
+}
+// js for the fizzbuzz part
+function printFizzBuzz() {
+    var output = document.getElementById('output');
+    var msg = document.getElementById('msg');
+    var count = document.getElementById("count");
+    msg.innerHTML = "";
+    output.innerHTML = "";
+    count.innerHTML = "";
+    let fizz = 0, buzz = 0, fizzbuzz = 0, numberCount = 0;  // using for count
+    var num = document.getElementById('number').value;
+    //writing some edge cases  to check empty or negative number 
+    if (isEmpty()) {
+        return isEmpty();
+    } else {
 
-    msg.innerHTML = "FizzBuzz from <b> 1 </b> to  <b>" + num+"</b>";
-    // console.log(num);
-    for (var i = 1; i <= num; i++) {
-        if (i % 15 == 0) {
-            // console.log("FizzBuzz");
-            output.innerHTML += ` <span class="op1  text-wrap">${"FizzBuzz"}</span>`;
-            fizzbuzz++;
-        } else if (i % 5 == 0) {
-            // console.log(" Buzz ");
-            output.innerHTML += ` <span class="op2  text-wrap">${"Buzz"} </span>`;
-            buzz++;
+        msg.innerHTML = "FizzBuzz from <b> 1 </b> to  <b>" + num + "</b>";
+        // console.log(num);
+        for (var i = 1; i <= num; i++) {
+            if (i % 15 == 0) {
+                // console.log("FizzBuzz");
+                output.innerHTML += ` <span class="op1  text-wrap">${"FizzBuzz"}</span>`;
+                fizzbuzz++;
+            } else if (i % 5 == 0) {
+                // console.log(" Buzz ");
+                output.innerHTML += ` <span class="op2  text-wrap">${"Buzz"} </span>`;
+                buzz++;
 
-        } else if (i % 3 == 0) {
-            // console.log("Fizz");
-            output.innerHTML += ` <span class="op3  text-wrap">${"Fizz"} </span>`;
-            fizz++;
+            } else if (i % 3 == 0) {
+                // console.log("Fizz");
+                output.innerHTML += ` <span class="op3  text-wrap">${"Fizz"} </span>`;
+                fizz++;
 
-        } else {
-            numberCount++;
-            // console.log(i);
-            output.innerHTML += ` <span class="op4  text-wrap"> ${i} </span>`;
+            } else {
+                numberCount++;
+                // console.log(i);
+                output.innerHTML += ` <span class="op4  text-wrap"> ${i} </span>`;
 
+            }
         }
+        //i am using literals
+        count.innerHTML = `Total Fizz :<b> ${fizz}</b> , Total Buzz : <b> ${buzz}</b> ,Total FizzBuzz : <b> ${fizzbuzz}</b> , Total Numbers : <b> ${numberCount}</b> `;
+        reset();
     }
-    //i am using literals
-    document.getElementById("count").innerHTML=`Total Fizz :<b> ${fizz}</b> , Total Buzz : <b> ${buzz}</b> ,Total FizzBuzz : <b> ${fizzbuzz}</b> , Total Numbers : <b> ${numberCount}</b> `;
-    reset();
 }
 
 //script for the factorial 
@@ -58,19 +74,14 @@ function getFact() {
     var num = document.getElementById("number").value;
     // console.log(num);
     //writing some edge cases  to check empty or negative number 
-    if (num === "" || num < 0) { //to check empty
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Please enter number greater or equal to 0'
-        })
-        return;
+    if (isEmpty()) {
+        return isEmpty();
+    } else {
+        const result = calculateFactorial(num);
+        document.getElementById("output").innerHTML = "Factorial of " + num + " is : " + result;
+        document.getElementById("output").innerHTML = `Factorial of ${num} is  <span class="finalans"> ${result} </span>`;
+        reset();
     }
-
-    const result = calculateFactorial(num);
-    document.getElementById("output").innerHTML = "Factorial of " + num + " is : " + result;
-    document.getElementById("output").innerHTML = `Factorial of ${num} is  <span class="finalans"> ${result} </span>`;
-    reset();
 }
 
 //wrtring gcd script
@@ -79,68 +90,124 @@ function gcd(a, b) {
     if (a == 0) {
         return b;
     }
-    return (b % a, a);
+    return gcd(b % a, a);
 }
 
 function getGCD() {
-    var num = document.getElementById("number").value; //this will return value as string 
-    num = num.split(" ").map(Number); //now sperate string when space seen and parse it into integer(Number)
-    // console.log(typeof(num));  //num is object array
-    num.sort(); //sort the array if user enter in unsorted way
-    var hcf = 0;
-    for (var i = 0; i < num.length; i++) {
-        hcf = gcd(hcf, num[i]);
-        // console.log("hcf "+hcf+" num "+num[i]);
+    if (isEmpty()) {
+        return true;
+    } else {
+        var num = document.getElementById("number").value; //this will return value as string
+        num = num.trim(); //removing white spaces from start and end
+        num = num.split(" ").map(Number); //now sperate string when space seen and parse it into integer(Number)
+        // console.log(typeof(num));  //num is object array
+        num.sort(); //sort the array if user enter in unsorted way
+        var hcf = 0;
+        for (var i = 0; i < num.length; i++) {
+            hcf = gcd(hcf, num[i]);
+            // console.log("hcf "+hcf+" num "+num[i]);
 
-        if (hcf === 1) {
-            // console.log("If consloe"+hcf);
-            document.getElementById("output").innerHTML = `GCD of ${num} is : <span class="finalans">${hcf}</span>`;
-            reset();
-
-            return;
+            if (hcf === 1) {
+                // console.log("If consloe"+hcf);
+                document.getElementById("output").innerHTML = `GCD of ${num} is : <span class="finalans">${1}</span>`;
+                reset();
+                return;
+            }
         }
+        // console.log("exit loop "+hcf);
+        document.getElementById("output").innerHTML = `GCD of ${num} is : <span class="finalans">${hcf}</span>`;
+        reset();
+        return;
     }
-    // console.log("exit loop "+hcf);
-    document.getElementById("output").innerHTML = `GCD of ${num} is : <span class="finalans">${hcf}</span>`;
-    reset();
-    return;
 }
-//writing function for reset input field
-function reset() {
-    document.getElementById('number').value = "";
-}
+
 
 //writing js for the prime factor 
 function getPrime() {
-    let n = document.getElementById("number").value;
-    // console.log(n);
-    let output = document.getElementById("output");
-    output.innerHTML="";
-    output.innerHTML+="Prime factor of "+n+" is   ";
-    // printing the number of 2's which divides the n
-    while (n % 2 == 0) {
-        output.innerHTML +=`<span class="finalans"> ${2}, </span>`;
-        n = n / 2;
-    }
-    //now checking if n is become odd  
-    for(var i=3;i<=Math.sqrt(n);i=i+2){
-        while(n%i==0){
-            output.innerHTML+=`<span class="finalans"> ${i}, </span>`;
-            n=n/i;
+    if (isEmpty()) {
+        return isEmpty();
+    } else {
+
+        let n = document.getElementById("number").value;
+        // console.log(n);
+        let output = document.getElementById("output");
+        output.innerHTML = "";
+        output.innerHTML += "Prime factor of " + n + " is   ";
+        // printing the number of 2's which divides the n
+        while (n % 2 == 0) {
+            output.innerHTML += `<span class="finalans"> ${2}, </span>`;
+            n = n / 2;
         }
+        //now checking if n is become odd  
+        for (var i = 3; i <= Math.sqrt(n); i = i + 2) {
+            while (n % i == 0) {
+                output.innerHTML += `<span class="finalans"> ${i}, </span>`;
+                n = n / i;
+            }
+        }
+        //if n is  a prime  number greater than 2
+        if (n > 2) {
+            output.innerHTML += `<span class="finalans"> ${n}, </span>`;
+        }
+        reset();
     }
-    //if n is  a prime  number greater than 2
-    if(n>2){
-        output.innerHTML+=`<span class="finalans"> ${n}, </span>`;
-    }
-  reset();
 }
 
 //to get n natural number sum
-function naturalSum(){
-    var n=Number(document.getElementById('number').value);
-    const sum=n*(n+1)/2;
-    // console.log(sum+" "+n);
-    document.getElementById('output').innerHTML=`Sum of 1 to ${n}  is <span class="finalans">${sum}</span>`;
-    reset();
+function naturalSum() {
+    if (isEmpty()) {
+        return isEmpty();
+    } else {
+        var n = Number(document.getElementById('number').value);
+        const sum = n * (n + 1) / 2;
+        // console.log(sum+" "+n);
+        document.getElementById('output').innerHTML = `Sum of 1 to ${n}  is <span class="finalans">${sum}</span>`;
+        reset();
+    }
+}
+
+function getSquare() {
+    let num = document.getElementById('number').value;
+    let output = document.getElementById('output');
+    output.innerHTML="";
+    if (isEmpty()) {
+        return isEmpty();
+    } else {
+        output.innerHTML = `Square of ${num} is <span class="finalans">${num * num} </span>`;
+        reset();
+    }
+
+}
+
+function getSqrt(){
+    let num=document.getElementById('number').value;
+    let output=document.getElementById('output');
+    if(isEmpty()){
+        return isEmpty();
+    }else{
+        // toFixed method precise the solutionn upto 4 decimal place
+        output.innerHTML=`Square root of ${num} <span class="finalans"> ${Math.sqrt(num).toFixed(5)}</span>`
+        reset();
+    }
+}
+
+function power(a,b){
+    if(b==1){
+        return a;
+    }
+    return a*power(a,b-1);
+}
+
+function getPower(){
+    let num=document.getElementById('number').value;
+    let p=document.getElementById('power').value;
+    let output=document.getElementById('output');
+    if(isEmpty()){
+        return isEmpty();
+    }else{
+       output.innerHTML=`${num} to the power ${p} is <span class="finalans">${power(num,p)} </span>`
+       document.getElementById('power').value=""; //for reset  power input
+       reset();
+      
+    }
 }
