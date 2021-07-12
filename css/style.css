@@ -3,11 +3,13 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 body {
     font-family: 'Lato', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
 }
 .container{
   min-height: 80vh;
