@@ -9,7 +9,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-family: 'Ubuntu', sans-serif;
-    overflow: hidden;
+    scroll-behavior: smooth;
 }
 .container{
   min-height: 80vh;
