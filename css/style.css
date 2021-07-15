@@ -16,8 +16,10 @@ body {
 }
 .navbar ul li a:hover{ 
     border-bottom: 3px solid orangered;
+    content: "";
    
 }
+
 /* css for the fizz buzz */
 #output {
   color: #04aa6d;

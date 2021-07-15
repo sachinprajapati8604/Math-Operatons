@@ -1,3 +1,4 @@
+
 //to check empty input
 function isEmpty() {
     let num = document.getElementById('number').value;
@@ -169,7 +170,7 @@ function naturalSum() {
 function getSquare() {
     let num = document.getElementById('number').value;
     let output = document.getElementById('output');
-    output.innerHTML="";
+    output.innerHTML = "";
     if (isEmpty()) {
         return isEmpty();
     } else {
@@ -179,35 +180,35 @@ function getSquare() {
 
 }
 
-function getSqrt(){
-    let num=document.getElementById('number').value;
-    let output=document.getElementById('output');
-    if(isEmpty()){
+function getSqrt() {
+    let num = document.getElementById('number').value;
+    let output = document.getElementById('output');
+    if (isEmpty()) {
         return isEmpty();
-    }else{
+    } else {
         // toFixed method precise the solutionn upto 4 decimal place
-        output.innerHTML=`Square root of ${num} <span class="finalans"> ${Math.sqrt(num).toFixed(5)}</span>`
+        output.innerHTML = `Square root of ${num} <span class="finalans"> ${Math.sqrt(num).toFixed(5)}</span>`
         reset();
     }
 }
 
-function power(a,b){
-    if(b==1){
+function power(a, b) {
+    if (b == 1) {
         return a;
     }
-    return a*power(a,b-1);
+    return a * power(a, b - 1);
 }
 
-function getPower(){
-    let num=document.getElementById('number').value;
-    let p=document.getElementById('power').value;
-    let output=document.getElementById('output');
-    if(isEmpty()){
+function getPower() {
+    let num = document.getElementById('number').value;
+    let p = document.getElementById('power').value;
+    let output = document.getElementById('output');
+    if (isEmpty()) {
         return isEmpty();
-    }else{
-       output.innerHTML=`${num} to the power ${p} is <span class="finalans">${power(num,p)} </span>`
-       document.getElementById('power').value=""; //for reset  power input
-       reset();
-      
+    } else {
+        output.innerHTML = `${num} to the power ${p} is <span class="finalans">${power(num, p)} </span>`
+        document.getElementById('power').value = ""; //for reset  power input
+        reset();
+
     }
 }

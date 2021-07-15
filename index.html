@@ -11,6 +11,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- script for sweet alert  -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="./script/basic.js"></script>
     <script src="./script/script.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -18,158 +19,22 @@
 
 </head>
 
-<body >
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Math-Operations</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Populars
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+<body onload="display()">
 
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar">
+        <!-- navbar will be displayed here -->
+    </div>
 
-    <!-- container main div -->
-    <div class="mainbox container my-4" id="mainbox">
+    <div class="container my-4 mainbox" id="mainbox">
         <div class="row g-3 p-3" id="mainrow">
-            <div class="col-3 ">
-                <div class="card text-dark  h-100 mycard">
-                    <div class="card-body">
-                        <h5 class="card-title">FizzBuzz</h5>
-                        <p class="card-text">click button to find solution</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/fizzbuzz.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Factorial</h5>
-                        <p class="card-text">click button to find solution</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/factorial.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">GCD(greatest common divisor) or HCF</h5>
-                        <p class="card-text">click button to find solution</p>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/gcd.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Sum of N Natural Number</h5>
-                        <p class="card-text">click button to find solution</p>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/nNatural_sum.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Prime Factor</h5>
-                        <p class="card-text">click button to find solution</p>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/prime_factor.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Square of Number</h5>
-                        <p class="card-text">click button to find solution</p>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/square.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Square Root  of Number</h5>
-                        <p class="card-text">click button to find solution</p>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/sqrt.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-dark mycard h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Power  of Number</h5>
-                        <p class="card-text">click button to find solution</p>
-
-                    </div>
-                    <div class="card-footer">
-                        <a href="files/power.html" class="btn btn-success">click to go</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-
+            <!-- now column will be added through java script  -->
         </div>
     </div>
 
+
     <!-- footer -->
-    <div class="myfooter container-fluid bg-dark text-light mt-4 p-3">
-        <p class="text-center mb-0">Made by Sachin Prajapati &copy; 2021 | All right reserved </p>
+    <div id="footer">
+        <!-- footer will be dispayed here -->
     </div>
 
 
