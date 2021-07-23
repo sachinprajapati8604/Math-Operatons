@@ -14,10 +14,13 @@ body {
 .container{
   min-height: 80vh;
 }
+/* applying padding for not moving element */
+.navbar ul li a{
+  padding-bottom: 4px;
+}
 .navbar ul li a:hover{ 
-    border-bottom: 3px solid orangered;
-    content: "";
-   
+    border-bottom: 3px solid orangered ;
+    padding-bottom: 0px;
 }
 
 /* css for the fizz buzz */
