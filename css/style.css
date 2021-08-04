@@ -1,26 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&family=Ubuntu:wght@300&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  
 }
 body {
-    font-family: 'Lato', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
-    scroll-behavior: smooth;
+  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  scroll-behavior: smooth;
 }
-.container{
-  min-height: 80vh;
+.container {
+  min-height: 65vh;
 }
+#mainbox{
+  min-height: 30vh;
+}
+
 /* applying padding for not moving element */
-.navbar ul li a{
+.navbar ul li a {
   padding-bottom: 4px;
 }
-.navbar ul li a:hover{ 
-    border-bottom: 3px solid orangered ;
-    padding-bottom: 0px;
+.navbar ul li a:hover {
+  border-bottom: 3px solid orangered;
+  padding-bottom: 0px;
 }
 
 /* css for the fizz buzz */
@@ -30,11 +33,9 @@ body {
   font-size: 20px;
   text-align: normal;
   word-wrap: break-word;
-  
 }
 
 #resultcol {
-  
   background-color: #e9ecef;
 }
 .op1 {
@@ -60,7 +61,6 @@ body {
   font-weight: bold;
   color: blue;
   font-size: 30px;
-  
 }
 .card-title {
   font-weight: 600;
@@ -71,14 +71,43 @@ body {
   border-left: 5px solid #04aa6d;
 }
 
-.myfooter{
-    position: static;
-    margin-top: 50px;
-    bottom: 0;
+.myfooter {
+  position: static;
+  margin-top: 50px;
+  bottom: 0;
 }
-.mycard{
+.mycard {
   background: #e5f8fc;
 }
+
+.social-icons {
+  margin: 10px;
+  text-align: center;
+}
+.social-icons li {
+  text-decoration: none;
+  list-style-type: none;
+  display: inline;
+  margin: 0px;
+}
+.social-icons li a i {
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.social-icons li a:hover {
+  color: blue;
+}
+
+.__headingtext{
+  border-left: 5px  solid #04aa6d;
+  padding: 10px;
+  font-weight: 700;
+}
+.col-6{
+  margin-bottom: 5px;
+}
+
 
 @media screen and (max-width: 600px) {
   .title_heading {
@@ -88,6 +117,4 @@ body {
   .col-3 {
     width: 100%;
   }
- 
 }
-

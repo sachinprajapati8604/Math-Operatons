@@ -1,46 +1,4 @@
-
-//making object of data used in html row and column 
-const data = {
-    fileurl: ["fizzbuzz.html", "factorial.html", "gcd.html", "nNatural_sum.html", "prime_factor", "square.html", "sqrt.html", "power.html"],
-    filetitle: ["FizzBuzz", "Factorial", "GCD(Greatest common divisor)", "Sum of n natural number", "Prime factor", "Square of number", "Square root of number", "Power of number"],
-}
-
-//onload event to display column 
-//calling the funtion in body onload of index.html only
-
-//making funtion to add column in row 
-function display() {
-    let len1 = data.fileurl.length;
-    let len2 = data.filetitle.length;
-    let i = 0;
-    let mainbox = document.getElementById('mainbox');
-    let row = document.getElementById('mainrow');
-    // let row=document.createElement('div');
-    // row.className='row';
-    while (i < len1 && i < len2) {
-        //  alert()
-        // console.log(data.fileurl[i]);
-        let col = document.createElement('div');
-        col.className = 'col-3';
-        //adding card in column inside  literrals ``
-        col.innerHTML =
-            `
-        <div class="card text-dark  h-100 mycard">
-        <div class="card-body">
-            <h5 class="card-title">${data.filetitle[i]}</h5>
-            <p class="card-text">click button to find solution</p>
-        </div>
-        <div class="card-footer">
-            <a href="files/${data.fileurl[i]}" class="btn btn-success">click to go</a>
-        </div>
-        </div>
-        `;
-        i = i + 1;
-        row.append(col);  //appending column into row 
-    }
-    mainbox.append(row);  //appending row into container 
-}
-
+//onload event 
 window.addEventListener('load', (event) => {
     displayNavbar();
     displayFooter();
@@ -98,8 +56,19 @@ function displayFooter() {
         `
     <div class="myfooter container-fluid bg-dark text-light mt-4 p-3">
     <p class="text-center mb-0">Made by Sachin Prajapati &copy; 2021 | All right reserved </p>
+    <ul class="social-icons">
+    <li><a class="facebook" href="https://www.facebook.com/bullet.raja.1998"><i class="fab fa-facebook-f"
+                aria-hidden="true"></i></a></li>
+    <li><a class="twitter" href="https://twitter.com/SachinP40"><i class="fab fa-twitter"
+                aria-hidden="true"></i></a></li>
+    <li><a class="instagram" href="https://www.instagram.com/prajapati_rangbaz?r=nametag"><i
+                class="fab fa-instagram" aria-hidden="true"></i></a></li>
+    <li><a class="github" href="https://github.com/sachinprajapati8604"><i class="fab fa-github"
+                aria-hidden="true"></i></a></li>
+    <li><a class="linkedin" href="https://www.linkedin.com/in/sachin-prajapati-8b1993188"><i
+                class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+
+    </ul>
     </div>
     `;
 }
-
-

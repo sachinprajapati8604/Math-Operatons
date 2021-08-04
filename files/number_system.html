@@ -11,7 +11,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 
-    <title>Factorial</title>
+    <title>Weight Convertor</title>
 
 </head>
 
@@ -21,17 +21,32 @@
         <!-- navbar will be displayed here -->
     </div>
 
-    <h1 class="title_heading text-center display-3"> Factorial</h1>
+    <h1 class="title_heading text-center display-3"> Number Base Conversion</h1>
     <div class="container my-4">
         <div class="row m-2">
             <div class="col-12 shadow p-3 mb-5 rounded ">
                 <div class="card">
-                    <h5 class="card-header text-center">Enter the number to calculate the factorial</h5>
+                    <h5 class="card-header text-center">Enter the number to calculate </h5>
                     <div class="card-body">
-                        <div class="d-flex">
-                            <input type="number" id="number" class="form-control mx-1 " placeholder="Enter number">
-                            <button onclick="getFact()" class="form-control btn btn-success"> Calculate</button>
+                        <div class="d-flex row">
+                            <div class="col-6">
+                                <input type="number" id="number" class="form-control mx-1 " placeholder="Enter number">
+                            </div>
+                            <div class="col-6">
+                                <select onchange="BaseConverter(this)" class="form-control" name="selectUnit"
+                                    id="selectUnit">
+                                    <option value="">Select Base of your number</option>
+                                    <option value="decimal">Decimal</option>
+                                    <option value="binary">Binary</option>
+                                    <option value="octal">Octal</option>
+                                    <option value="hexa">Hexa Decimal</option>
+                                </select>
+
+                            </div>
+
+
                         </div>
+
                     </div>
                 </div>
                 <hr>

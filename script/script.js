@@ -212,3 +212,80 @@ function getPower() {
 
     }
 }
+
+
+function weightConverter() {
+    let select = document.getElementById('selectUnit');
+    var option = select.options[select.selectedIndex].value;
+    if (option === "kg") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v = e.target.value;
+            document.getElementById('output').innerHTML = `<span >Kilogram : ${v}</span> <br> <span class="op3" >Gram : ${v * 1000}</span> <br> <span class="op4">Pounds : ${(v * 2.2046).toFixed(4)}</span> <br> <span class="op2">Ounces : ${(v * 35.274).toFixed(4)}</span>`;
+        })
+
+    }
+    else if (option === "grams") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v = e.target.value;
+            document.getElementById('output').innerHTML = `<span >Grams : ${v}</span> <br> <span class="op3" >Kilogram : ${(v / 1000).toFixed(4)}</span> <br> <span class="op4">Pounds : ${(v * 0.0022046).toFixed(4)}</span> <br> <span class="op2">Ounces : ${(v * 0.035274).toFixed(4)}</span>`;
+        })
+
+    }
+    else if (option === "pounds") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v = e.target.value;
+            document.getElementById('output').innerHTML = `<span >Pounds : ${v}</span> <br> <span class="op3" >Kilogram : ${(v / 2.2046).toFixed(4)}</span> <br> <span class="op4">Gram : ${(v / 0.0022046).toFixed(4)}</span> <br> <span class="op2">Ounces : ${(v * 16).toFixed(4)}</span>`;
+        })
+
+    }
+    else if (option === "ounces") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v = e.target.value;
+            document.getElementById('output').innerHTML = `<span >Ounces : ${v}</span> <br> <span class="op3" >Kilogram : ${(v / 35.274).toFixed(4)}</span> <br> <span class="op4">Gram : ${(v / 0.035274).toFixed(4)}</span> <br> <span class="op2">Pounds : ${(v * 0.0625).toFixed(4)}</span>`;
+        })
+
+    }
+}
+
+function BaseConverter() {
+    let select = document.getElementById('selectUnit');
+    var option = select.options[select.selectedIndex].value;
+    if (option === "decimal") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v =Number(e.target.value);
+            document.getElementById('output').innerHTML = `<span >Decimal : ${v}</span> <br> <span class="op3" >Binary : ${(v).toString(2)}</span> <br> <span class="op4">Octal : ${(v.toString(8))}</span> <br> <span class="op2">Hexa Decimal : ${v.toString(16)}</span>`;
+        })
+
+    }
+    else if (option === "binary") {
+        reset();
+       
+        document.getElementById('number').addEventListener('input', function (e) {
+           
+            let v =Number(e.target.value.replace(/[^0-1]/g, '').replace(/(.{4})/g, '$1 ').trim());
+            document.getElementById('output').innerHTML = `<span >Binary : ${v}</span> <br> <span class="op3" >Decimal : ${(v).toString(10)}</span> <br> <span class="op4">Octal : ${(v.toString(8))}</span> <br> <span class="op2">Hexa Decimal : ${v.toString(16)}</span>`;
+        })
+
+    }
+    else if (option === "octal") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v =Number(e.target.value);
+            document.getElementById('output').innerHTML = `<span >Octal : ${v}</span> <br> <span class="op3" >Binary : ${(v).toString(2)}</span> <br> <span class="op4">Decimal : ${(v.toString(10))}</span> <br> <span class="op2">Hexa Decimal : ${v.toString(16)}</span>`;
+        })
+
+    }
+    else if (option === "hexa") {
+        reset();
+        document.getElementById('number').addEventListener('input', function (e) {
+            let v =Number(e.target.value);
+            document.getElementById('output').innerHTML = `<span >Hexa Decimal : ${v}</span> <br> <span class="op3" >Binary : ${(v).toString(2)}</span> <br> <span class="op4">Octal : ${(v.toString(8))}</span> <br> <span class="op2">Decimal : ${v.toString(10)}</span>`;
+        })
+
+    }
+}
