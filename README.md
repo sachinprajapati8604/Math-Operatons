@@ -14,11 +14,11 @@
 ## Technology used
 
 <ol>
-<li> HTML<li>
-<li> CSS<li>
-<li> BOOTSTRAP<li>
-<li> JAVA SCRIPT<li>
-<ol>
+<li> HTML</li>
+<li> CSS</li>
+<li> BOOTSTRAP</li>
+<li> JAVA SCRIPT</li>
+</ol>
 
 
 
