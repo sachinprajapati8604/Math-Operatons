@@ -1,11 +1,27 @@
 # Math-Operatons
 
-###### here i have made a website to find some math problem using Java script .
+### This is front end project based on html,css,bootstrap,JavaScript. This project deals to solve math problem.
 
 
-test this project using below link
 
-https://sachinprajapati8604.github.io/Math-Operatons/
+## Project preview Links :
+
+<a href="https://sachinprajapati8604.github.io/Math-Operatons/"> Github web page link  </a>
+
+<a href="https://spmathoperations.netlify.app/"> Netlify Link  </a>
+
+
+## Technology used
+
+<ol>
+<li> HTML<li>
+<li> CSS<li>
+<li> BOOTSTRAP<li>
+<li> JAVA SCRIPT<li>
+<ol>
+
+
+
 
 
 ## Features-
@@ -18,4 +34,6 @@ https://sachinprajapati8604.github.io/Math-Operatons/
 * Square of number
 * Square Root of number
 * Power of number
+* Weight conversion
+* Number base conversion
 
