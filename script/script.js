@@ -307,7 +307,7 @@ function getH2B(){
             op2=Number((biswa%19.88).toFixed(8));
             output.innerHTML = `Area result for <span class="op4"> ${num} </span> Hectare :  <br> <span class="finalans"> ${biswa}</span> Biswa <br> or<br> <span class="finalans"> ${bigha} </span>Bigha <br>or<br> Your Total area : <span class="finalans"> ${op1} </span>Bigha  , <span class="finalans"> ${op2} </span> Biswa`;
         }else{
-            output.innerHTML = `Area result for ${num} Hectare :  <br> or<br><span class="finalans"> ${biswa}</span> Biswa <br>or<br> <span class="finalans"> ${bigha} </span>Bigha`;
+            output.innerHTML = `Area result for ${num} Hectare :  <br><span class="finalans"> ${biswa}</span> Biswa <br>or<br> <span class="finalans"> ${bigha} </span>Bigha`;
         }
         document.getElementById('number').value = "";
         reset();
