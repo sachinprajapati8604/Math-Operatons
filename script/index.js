@@ -46,8 +46,8 @@ function display() {
 }
 
 const convertor = {
-    fileurl: ["Weight_conv.html","number_system.html"],
-    filetitle: ["weight conversion","Number convertor"],
+    fileurl: ["Weight_conv.html","number_system.html","hectare_to_biswa.html"],
+    filetitle: ["weight conversion","Number convertor"," Plot Measurment (Bigha,Biswa) "],
 }
 
 //making funtion to add column in row 

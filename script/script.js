@@ -289,3 +289,28 @@ function BaseConverter() {
 
     }
 }
+
+function getH2B(){
+    let num = document.getElementById('number').value;
+    let output = document.getElementById('output');
+    if (isEmpty()) {
+        return isEmpty();
+    } else {
+        let bigha=Number((num*3.99).toFixed(4));
+        let biswa=Number((num*79.36).toFixed(4));
+        let op1;
+        let op2;
+      
+
+        if(biswa>=19.88){           
+            op1=parseInt(biswa/19.88);
+            op2=Number((biswa%19.88).toFixed(8));
+            output.innerHTML = `Area result for <span class="op4"> ${num} </span> Hectare :  <br> <span class="finalans"> ${biswa}</span> Biswa <br> or<br> <span class="finalans"> ${bigha} </span>Bigha <br>or<br> Your Total area : <span class="finalans"> ${op1} </span>Bigha  , <span class="finalans"> ${op2} </span> Biswa`;
+        }else{
+            output.innerHTML = `Area result for ${num} Hectare :  <br> or<br><span class="finalans"> ${biswa}</span> Biswa <br>or<br> <span class="finalans"> ${bigha} </span>Bigha`;
+        }
+        document.getElementById('number').value = "";
+        reset();
+
+    }
+}

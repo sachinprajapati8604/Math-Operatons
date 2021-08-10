@@ -1,19 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&display=swap");
 
 * {
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
-  font-family: "Ubuntu", sans-serif;
   scroll-behavior: smooth;
 }
 .container {
   min-height: 65vh;
 }
-#mainbox{
+#mainbox {
   min-height: 30vh;
 }
 
@@ -29,7 +28,7 @@ body {
 /* css for the fizz buzz */
 #output {
   color: #04aa6d;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 20px;
   text-align: normal;
   word-wrap: break-word;
@@ -78,6 +77,7 @@ body {
 }
 .mycard {
   background: #e5f8fc;
+  
 }
 
 .social-icons {
@@ -99,15 +99,25 @@ body {
   color: blue;
 }
 
-.__headingtext{
-  border-left: 5px  solid #04aa6d;
+.title_heading{
+  font-size: 3rem;
+  margin: 20px;
+}
+.line{
+  border-bottom: 3px solid #dd3248;
+ margin: auto;
+ width: 20%;
+}
+.__headingtext {
+  border-left: 5px solid #04aa6d;
   padding: 10px;
   font-weight: 700;
+  margin-left: 20px;
+  background-color: aquamarine;
 }
-.col-6{
+.col-6 {
   margin-bottom: 5px;
 }
-
 
 @media screen and (max-width: 600px) {
   .title_heading {
@@ -116,5 +126,8 @@ body {
   .col-6,
   .col-3 {
     width: 100%;
+  }
+  .line{
+    width: 50%;
   }
 }
