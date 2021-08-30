@@ -1,6 +1,6 @@
 # Math-Operatons
 
-### This is front end project based on html,css,bootstrap,JavaScript. This project deals to solve math problem.Basically i have used funtions and objects  to perform all the task as well as dom element added through Java Script.
+ This is front end project based on html,css,bootstrap,JavaScript. This project deals to solve math problem.Basically i have used funtions and objects  to perform all the task as well as dom element added through Java Script.
 
 
 
